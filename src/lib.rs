@@ -24,7 +24,7 @@ pub struct LevelHead {
 }
 
 #[derive(Deserialize, Debug, Default)]
-pub struct ForceExpand; // Workaround due to a bug in quick-xml not expanding empty elements when containing an @ / $text field
+pub(crate) struct ForceExpand; // Workaround due to a bug in quick-xml not expanding empty elements when containing an @ / $text field
 
 impl Serialize for ForceExpand {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
